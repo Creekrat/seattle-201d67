@@ -99,12 +99,29 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+    // created a variable for each number in the array
+    var a = sumArr[0];
+    var b = sumArr[1];
+    var c = sumArr[2];
+    //i needed to create variables to add a and b together and then add it into an array
+    // used the function sum to add the numbers together
+    //used[0] to create an index to add the sum of the numbers into
+    var addAB = sum(a,b)[0];
+    //created another variable to use to add the sum of a and b to c by using the variable for a and b
+    //then i created another index to add the sum of all three numbers into it
+    var addABC = sum(addAB,c)[0];
+    //then i needed to create a string with the sum of all three numbers
+    var answer = sumArr + " was passed in as an array of numbers, and " + addABC + " is their sum."
+    //returning the sum of the array and adding in the string
+    return [addABC,answer];
+    
+
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
