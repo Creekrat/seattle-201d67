@@ -9,16 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-   console.log(a);
-   console.log(b);
    var equals = a+b;
    var newArray = [a+b, "The sum of " + a + " and " + b + " is " + equals + "." ];
-   console.log(equals);
+   
    return newArray;
 }
 // Here is the test for sum(); uncomment it to run it
  testSum(4, 7);
- console.log(sum(4,7));
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -32,17 +30,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {  //eslint-disable-line
-    console.log(a);
-    console.log(b);
+ 
     var equals = a*b;
     var newArray = [equals, "The product of " + a + " and " + b + " is " + equals + "."];
-    console.log(equals);
+    
     return newArray;
 }
 
 // Here is the test for multiply(); uncomment it to run it
  testMultiply(5,9);
- console.log(multiply(5,9));
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -59,12 +56,33 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+ var response = [];
+ var arrayAb = sum(a,b); // [11, " ... "]
+ var intAb = arrayAb[0]; // 11
+ var arrayAbc = sum(intAb,c);  // [16, " ... "]
+ var intAbc = arrayAbc[0]; // 16
+response.push(intAbc);
 
+ var sumAnswer = a + " and " + b + " and " + c + " sum to " + intAbc + ".";
+
+
+  var arrayAb2 = multiply(a,b); 
+  var intAb2 = arrayAb2[0]; 
+  var arrayAbc2 = multiply(intAb2,c);
+  var intAbc2 = arrayAbc2[0];
+  response.push(intAbc2);
+  var arrayAb2 = "The product of " + a + " and " + b + " and " + c + " is " + intAbc2 + ".";
+  response.push(sumAnswer);
+  response.push(arrayAb2);
+ 
+
+  return response;
+  
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
-
+ testSumAndMultiply(4,7,5);
+ console.log(sumAndMultiply(4,7,5));
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
